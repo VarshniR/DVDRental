@@ -1,13 +1,19 @@
 ## Varshni's Portfolio
 
-In this project, we have queried the DVD Rental database. The Database holds information about a company that rents movie DVDs. For this project, we have queried the database to gain an understanding of the customer base, such as what the patterns in movie watching are across different customer groups, how they compare on payment earnings, and how the stores compare in their performance.
+### DVD Rental Database
 
-### Varshni's Portfolio
+In this project, I have queried the DVD Rental database. The Database holds information about a company that rents movie DVDs. For this project, I have queried the database to gain an understanding of the customer base, such as what the patterns in movie watching are across different customer groups, how they compare on payment earnings, and how the stores compare in their performance.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+-- Q1. We want to send out a promotional email to all our existing customers. 
+
+SELECT first_name, last_name,email FROM customer;
+
+```markdown SELECT first_name, last_name,email FROM customer;
+
+-- Q2. We want to know the distinct rating types in our database
+
+```markdown SELECT DISTINCT rating FROM film;
 
 # Header 1
 ## Header 2
