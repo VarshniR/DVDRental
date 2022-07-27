@@ -6,15 +6,29 @@ In this project, I have queried the DVD Rental database. The Database holds info
 
 
 -- Q1. We want to send out a promotional email to all our existing customers. 
-
 ```markdown 
 SELECT first_name, last_name,email FROM customer;
 ```
-
 -- Q2. We want to know the distinct rating types in our database
-
 ```markdown 
 SELECT DISTINCT rating FROM film;
+```
+-- Q3. Find out how many transactions were greater than $5.00
+```markdown 
+SELECT COUNT(*)amount FROM payment
+WHERE amount >5.00;
+```
+-- Q4. How many actors have a first name that starts with a letter P?
+```markdown
+SELECT COUNT(*)first_name FROM actor
+WHERE first_name LIKE 'P%';
+```
+-- Q5. How many unique districts are our customers from?
+```markdown
+SELECT COUNT(DISTINCT(district)) FROM address;
+```
+
+
 
 # Header 1
 ## Header 2
