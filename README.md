@@ -27,6 +27,63 @@ WHERE first_name LIKE 'P%';
 ```markdown
 SELECT COUNT(DISTINCT(district)) FROM address;
 ```
+-- Q6. How many films have a rating of R and a replacement cost between $5 and $15?
+```markdown
+SELECT COUNT(*) FROM film
+WHERE rating = 'R' 
+AND replacement_cost BETWEEN 5.00 AND 15.00;
+```
+-- Q7. How many films have the word Truman somewhere in the title?
+```markdown
+SELECT COUNT(*) FROM film 
+WHERE title LIKE '%Truman%';
+```
+-- Q8. We are launching a platinum service for our most loyal customers. We will assign platinum status to customers that had 40 or more transaction payments.What customer_ids are eligible for platinum status?
+```markdown
+SELECT customer_id, COUNT(*) FROM payment
+GROUP BY customer_id
+HAVING COUNT(*)>= 40;
+```
+-- Q9. What are the customer ids of customers who have spent more than $100 in payment transactions with our staff_id member 2?
+```markdown
+SELECT customer_id, sum(amount) FROM payment
+WHERE staff_id= 2
+GROUP BY customer_id
+HAVING SUM(amount)>100;
+```
+-- Q10. What customer has the highest customer ID number whose name starts with an 'E' and has an address ID lower than 500?
+```markdown
+SELECT first_name, last_name FROM customer
+WHERE first_name LIKE 'E%'
+AND address_id < 500
+ORDER BY customer_id DESC
+LIMIT 1;
+```
+-- Q11. California sales tax laws have changed and we need to alert our customers to this through email. What are the emails of the customers who live in California?
+```markdown
+SELECT address.district, customer.email FROM address
+INNER JOIN CUSTOMER
+ON address.address_id = customer.customer_id
+where district = 'California';
+```
+-- Q12. A customer is a huge fan of the actor Nick Wahlberg and wants to know which movies he is in. Get a list of all the movies 'Nick Wahlberg' has been in.
+```markdown
+SELECT  first_name, last_name,title FROM film_actor
+INNER JOIN actor
+ON film_actor.actor_id = actor.actor_id
+INNER JOIN film
+ON film_actor.film_id= film.film_id
+WHERE first_name = 'Nick' AND last_name = 'Wahlberg';
+```
+-- Q13. Find out which movies are NOT in the inventory at the moment at any of the stores.
+```markdown
+SELECT film.film_id, title, inventory_id, store_id FROM film
+LEFT OUTER JOIN inventory
+ON inventory.film_id= film.film_id
+WHERE inventory.film_id IS NULL; 
+```
+
+
 
 
 
