@@ -1,3 +1,4 @@
+##Varshni's Portfolio
 ### DVD Rental Database
 
 In this project, I have queried the DVD Rental database. The Database holds information about a company that rents movie DVDs. For this project, I have queried the database to gain an understanding of the customer base, such as what the patterns in movie watching are across different customer groups, how they compare on payment earnings, and how the stores compare in their performance.
@@ -82,14 +83,36 @@ WHERE inventory.film_id IS NULL;
 ```
 -- Q14. During which months did payments occur?
 ```markdown
-SELECT DISTINCT(TO_CHAR(payment_date, 'MONTH')) FROM payment
+SELECT DISTINCT(TO_CHAR(payment_date, 'MONTH')) FROM payment;
 ```
 -- Q15. How many payments occured on a Monday?
 ```markdown
 SELECT COUNT(*) FROM payment
-WHERE EXTRACT(dow FROM payment_date)=1
+WHERE EXTRACT(dow FROM payment_date)=1;
 ```
+-- Q16. Find out which films have a rental rate that is higher than the average rental rate?
+```markdown
+SELECT titlte, rental_rate FROM film
+WHERE rental_rate > 
+(SELECT AVG(rental_rate) FROM film;
 ```
+-- Q17. Find the film titles that have been returned between May 29, 2005 and May 30, 2005. 
+```markdown 
+SELECT film_id, title FROM title
+WHERE film_id IN 
+(SELECT inventory.film_id FROM rental
+INNER JOIN inventory
+ON inventory.inventory_id = rental.inventory_id
+WHERE return_date BETWEEN '2005-05-29' AND '2005-05-30')
+ORDER BY film_id
+```
+
+
+
+
+
+
+
 
 # Header 1
 ## Header 2
