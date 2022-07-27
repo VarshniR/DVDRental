@@ -1,8 +1,6 @@
-## Welcome to GitHub Pages
+## Varshni's Portfolio
 
-You can use the [editor on GitHub](https://github.com/VarshniR/Test/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+In this project, we have queried the DVD Rental database. The Database holds information about a company that rents movie DVDs. For this project, we have queried the database to gain an understanding of the customer base, such as what the patterns in movie watching are across different customer groups, how they compare on payment earnings, and how the stores compare in their performance.
 
 ### Varshni's Portfolio
 
