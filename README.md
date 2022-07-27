@@ -9,7 +9,9 @@ In this project, I have queried the DVD Rental database. The Database holds info
 
 SELECT first_name, last_name,email FROM customer;
 
-```markdown SELECT first_name, last_name,email FROM customer;
+```markdown 
+
+SELECT first_name, last_name,email FROM customer;
 
 -- Q2. We want to know the distinct rating types in our database
 
