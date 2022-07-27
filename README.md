@@ -7,15 +7,13 @@ In this project, I have queried the DVD Rental database. The Database holds info
 
 -- Q1. We want to send out a promotional email to all our existing customers. 
 
-SELECT first_name, last_name,email FROM customer;
-
 ```markdown 
-
 SELECT first_name, last_name,email FROM customer;
 
 -- Q2. We want to know the distinct rating types in our database
 
-```markdown SELECT DISTINCT rating FROM film;
+```markdown 
+SELECT DISTINCT rating FROM film;
 
 # Header 1
 ## Header 2
